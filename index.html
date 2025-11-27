@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health Assessment | AI-Powered Risk Analysis</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4b8b59b7b7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Background Elements -->
+        <div class="bg-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+        </div>
+        
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="assessment-card">
+                <!-- Header Section -->
+                <div class="card-header">
+                    <div class="header-icon">
+                        <i class="fas fa-heartbeat"></i>
+                    </div>
+                    <h1>Heart Health Assessment</h1>
+                    <p>Get your personalized AI-powered heart disease risk analysis in seconds</p>
+                </div>
+
+                <!-- Form Section -->
+                <form id="heartForm" class="assessment-form">
+                    <div class="form-sections">
+                        <!-- Personal Health Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-user-md"></i> Personal Health</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>High Blood Pressure</label>
+                                    <select name="HighBP" class="modern-select">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>High Cholesterol</label>
+                                    <select name="HighChol" class="modern-select">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>BMI (Body Mass Index)</label>
+                                    <input type="number" name="BMI" step="0.1" min="10" max="60" required class="modern-input" placeholder="e.g., 25.5">
+                                </div>
+                                <div class="form-group">
+                                    <label>Diabetes</label>
+                                    <select name="Diabetes" class="modern-select">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Lifestyle Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-running"></i> Lifestyle Factors</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Smoking Status</label>
+                                    <select name="Smoker" class="modern-select">
+                                        <option value="0">Non-smoker</option>
+                                        <option value="1">Smoker</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Physical Activity</label>
+                                    <select name="PhysActivity" class="modern-select">
+                                        <option value="1">Active</option>
+                                        <option value="0">Inactive</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Fruit Consumption</label>
+                                    <select name="Fruits" class="modern-select">
+                                        <option value="1">Regular</option>
+                                        <option value="0">Rare</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Vegetable Consumption</label>
+                                    <select name="Veggies" class="modern-select">
+                                        <option value="1">Regular</option>
+                                        <option value="0">Rare</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Heavy Alcohol Use</label>
+                                    <select name="HeavyAlcohol" class="modern-select">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Stroke History</label>
+                                    <select name="Stroke" class="modern-select">
+                                        <option value="0">No</option>
+                                        <option value="1">Yes</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Health Metrics Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-chart-line"></i> Health Metrics</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>General Health Rating</label>
+                                    <select name="GenHlth" class="modern-select">
+                                        <option value="1">Excellent</option>
+                                        <option value="2">Very Good</option>
+                                        <option value="3">Good</option>
+                                        <option value="4">Fair</option>
+                                        <option value="5">Poor</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Mental Health Days (0-30)</label>
+                                    <input type="number" name="MentHlth" min="0" max="30" required class="modern-input" placeholder="0">
+                                </div>
+                                <div class="form-group">
+                                    <label>Physical Health Days (0-30)</label>
+                                    <input type="number" name="PhysHlth" min="0" max="30" required class="modern-input" placeholder="0">
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Demographics Section -->
+                        <div class="form-section">
+                            <h3><i class="fas fa-users"></i> Demographics</h3>
+                            <div class="form-grid">
+                                <div class="form-group">
+                                    <label>Age</label>
+                                    <input type="number" name="Age" min="18" max="100" required class="modern-input" placeholder="25">
+                                </div>
+                                <div class="form-group">
+                                    <label>Sex</label>
+                                    <select name="Sex" class="modern-select">
+                                        <option value="0">Female</option>
+                                        <option value="1">Male</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Education Level</label>
+                                    <select name="Education" class="modern-select">
+                                        <option value="1">Less than High School</option>
+                                        <option value="2">High School</option>
+                                        <option value="3">Some College</option>
+                                        <option value="4">College Graduate</option>
+                                        <option value="5">Post Graduate</option>
+                                        <option value="6">Doctorate</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label>Income Level</label>
+                                    <select name="Income" class="modern-select">
+                                        <option value="1">Under $10,000</option>
+                                        <option value="2">$10,000 - $15,000</option>
+                                        <option value="3">$15,000 - $20,000</option>
+                                        <option value="4">$20,000 - $25,000</option>
+                                        <option value="5">$25,000 - $35,000</option>
+                                        <option value="6">$35,000 - $50,000</option>
+                                        <option value="7">$50,000 - $75,000</option>
+                                        <option value="8">Over $75,000</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="submit-btn">
+                        <span class="btn-content">
+                            <i class="fas fa-search"></i>
+                            <span>Get My Assessment</span>
+                        </span>
+                        <div class="btn-loading">
+                            <div class="spinner"></div>
+                            <span>Analyzing...</span>
+                        </div>
+                    </button>
+                </form>
+
+                <!-- Results Section -->
+                <div class="results-container" id="result"></div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <div class="footer-content">
+                <p>Made with <i class="fas fa-heart"></i> for your health &copy; 2024</p>
+                <p class="disclaimer">This assessment is for educational purposes only. Always consult healthcare professionals for medical advice.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('heartForm').onsubmit = function(e) {
+            e.preventDefault();
+            const submitButton = e.target.querySelector('.submit-btn');
+            const resultDiv = document.getElementById('result');
+            
+            // Show loading state
+            submitButton.classList.add('loading');
+            
+            // Clear previous results
+            resultDiv.innerHTML = '';
+            resultDiv.className = 'results-container';
+            resultDiv.classList.remove('show', 'positive', 'negative', 'error');
+
+            const formData = new FormData(e.target);
+            const data = Object.fromEntries(formData);
+
+            fetch('http://127.0.0.1:5000/predict', {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                return response.json();
+            })
+            .then(result => {
+                let message = '';
+                let resultClass = '';
+                
+                if (result.error) {
+                    message = `
+                        <div class="result-card error">
+                            <div class="result-icon">
+                                <i class="fas fa-exclamation-circle"></i>
+                            </div>
+                            <div class="result-content">
+                                <h3>Error</h3>
+                                <p>${result.error}</p>
+                            </div>
+                        </div>
+                    `;
+                    resultClass = 'error';
+                } else if (result.prediction === 1) {
+                    message = `
+                        <div class="result-card positive">
+                            <div class="result-icon">
+                                <i class="fas fa-exclamation-triangle"></i>
+                            </div>
+                            <div class="result-content">
+                                <h3>Higher Risk Detected</h3>
+                                <p>Based on your inputs, our AI model indicates a higher risk for heart disease. Please consult with a healthcare professional for a comprehensive evaluation.</p>
+                                <div class="result-actions">
+                                    <button class="action-btn primary">Schedule Checkup</button>
+                                    <button class="action-btn secondary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    resultClass = 'positive';
+                } else {
+                    message = `
+                        <div class="result-card negative">
+                            <div class="result-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <div class="result-content">
+                                <h3>Lower Risk Profile</h3>
+                                <p>Great news! Our AI model indicates a lower risk for heart disease based on your inputs. Continue maintaining a healthy lifestyle!</p>
+                                <div class="result-actions">
+                                    <button class="action-btn primary">Health Tips</button>
+                                    <button class="action-btn secondary">Learn More</button>
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    resultClass = 'negative';
+                }
+                
+                resultDiv.innerHTML = message;
+                resultDiv.className = `results-container ${resultClass}`;
+                resultDiv.classList.add('show');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                let errorMessage = 'An error occurred while processing your request.';
+                
+                if (error.message.includes('Failed to fetch')) {
+                    errorMessage = 'Unable to connect to the assessment server. Please ensure the application is running properly.';
+                } else if (error.message.includes('HTTP error')) {
+                    errorMessage = `Server error: ${error.message}`;
+                }
+                
+                resultDiv.innerHTML = `
+                    <div class="result-card error">
+                        <div class="result-icon">
+                            <i class="fas fa-exclamation-circle"></i>
+                        </div>
+                        <div class="result-content">
+                            <h3>Connection Error</h3>
+                            <p>${errorMessage}</p>
+                        </div>
+                    </div>
+                `;
+                resultDiv.className = 'results-container error';
+                resultDiv.classList.add('show');
+            })
+            .finally(() => {
+                submitButton.classList.remove('loading');
+            });
+        };
+    </script>
+</body>
+</html> 
